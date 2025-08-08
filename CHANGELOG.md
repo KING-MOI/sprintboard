@@ -84,3 +84,4 @@
 - double-check release checklist behavior
 - considered exit codes; parked for now
 - considered error messages; parked for now
+- follow up on the retry path
