@@ -85,3 +85,4 @@
 - considered exit codes; parked for now
 - considered error messages; parked for now
 - follow up on the retry path
+- considered error messages; parked for now
