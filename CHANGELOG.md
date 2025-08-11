@@ -52,3 +52,4 @@
 - considered link checker; parked for now
 - double-check exit codes behavior
 - flaky test observed while testing
+- follow up on docs example
