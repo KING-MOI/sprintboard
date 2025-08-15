@@ -54,3 +54,4 @@
 - flaky test observed while testing
 - follow up on docs example
 - considered release checklist; parked for now
+- edge case observed while testing
