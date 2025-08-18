@@ -60,3 +60,4 @@
 - double-check exit codes behavior
 - slow start observed while testing
 - edge case observed while testing
+- cache miss observed while testing
