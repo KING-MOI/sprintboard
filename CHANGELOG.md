@@ -31,3 +31,4 @@
 - follow up on docs example
 - considered cleanup logic; parked for now
 - follow up on ci caching
+- considered release checklist; parked for now
