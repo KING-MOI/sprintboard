@@ -39,3 +39,4 @@
 - follow up on exit codes
 - double-check the retry path behavior
 - follow up on docs example
+- double-check config defaults behavior
