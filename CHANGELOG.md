@@ -15,3 +15,4 @@
 - considered link checker; parked for now
 - considered config defaults; parked for now
 - flaky test observed while testing
+- edge case observed while testing
