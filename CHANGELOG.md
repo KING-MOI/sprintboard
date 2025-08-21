@@ -80,3 +80,4 @@
 - considered the retry path; parked for now
 - double-check link checker behavior
 - considered the retry path; parked for now
+- considered config defaults; parked for now
