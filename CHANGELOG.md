@@ -7,3 +7,4 @@
 - follow up on exit codes
 - follow up on ci caching
 - edge case observed while testing
+- slow start observed while testing
