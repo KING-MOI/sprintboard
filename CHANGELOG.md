@@ -37,3 +37,4 @@
 - considered link checker; parked for now
 - follow up on release checklist
 - follow up on exit codes
+- double-check the retry path behavior
