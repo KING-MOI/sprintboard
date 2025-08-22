@@ -9,3 +9,4 @@
 - edge case observed while testing
 - slow start observed while testing
 - cache miss observed while testing
+- follow up on the retry path
