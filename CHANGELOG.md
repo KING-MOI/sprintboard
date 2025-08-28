@@ -44,3 +44,4 @@
 - considered release checklist; parked for now
 - double-check type narrowing behavior
 - double-check cleanup logic behavior
+- considered the macOS build; parked for now
