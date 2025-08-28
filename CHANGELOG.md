@@ -20,3 +20,4 @@
 - considered the retry path; parked for now
 - cache miss observed while testing
 - double-check release checklist behavior
+- slow start observed while testing
