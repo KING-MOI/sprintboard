@@ -53,3 +53,4 @@
 - double-check exit codes behavior
 - flaky test observed while testing
 - follow up on docs example
+- considered release checklist; parked for now
