@@ -17,3 +17,4 @@
 - flaky test observed while testing
 - edge case observed while testing
 - considered error messages; parked for now
+- considered the retry path; parked for now
