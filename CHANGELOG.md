@@ -1,1 +1,2 @@
 - slow start observed while testing
+- follow up on exit codes
