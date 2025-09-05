@@ -43,3 +43,4 @@
 - double-check link checker behavior
 - considered release checklist; parked for now
 - double-check type narrowing behavior
+- double-check cleanup logic behavior
