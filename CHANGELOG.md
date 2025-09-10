@@ -83,3 +83,4 @@
 - considered config defaults; parked for now
 - double-check release checklist behavior
 - considered exit codes; parked for now
+- considered error messages; parked for now
