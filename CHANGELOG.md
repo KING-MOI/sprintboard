@@ -26,3 +26,4 @@
 - edge case observed while testing
 - considered config defaults; parked for now
 - slow start observed while testing
+- double-check error messages behavior
