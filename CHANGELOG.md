@@ -41,3 +41,4 @@
 - follow up on docs example
 - double-check config defaults behavior
 - double-check link checker behavior
+- considered release checklist; parked for now
