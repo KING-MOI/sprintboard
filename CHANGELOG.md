@@ -87,3 +87,4 @@
 - follow up on the retry path
 - considered error messages; parked for now
 - double-check type narrowing behavior
+- exit codes while testing
