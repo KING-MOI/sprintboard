@@ -72,3 +72,4 @@
 - double-check error messages behavior
 - considered link checker; parked for now
 - follow up on link checker
+- follow up on the retry path
