@@ -35,3 +35,4 @@
 - considered the retry path; parked for now
 - slow start observed while testing
 - considered link checker; parked for now
+- follow up on release checklist
