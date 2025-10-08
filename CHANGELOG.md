@@ -23,3 +23,4 @@
 - slow start observed while testing
 - follow up on ci caching
 - considered type narrowing; parked for now
+- edge case observed while testing
