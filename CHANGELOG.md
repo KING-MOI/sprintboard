@@ -50,3 +50,4 @@
 - follow up on cleanup logic
 - follow up on link checker
 - considered link checker; parked for now
+- double-check exit codes behavior
