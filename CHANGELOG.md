@@ -25,3 +25,4 @@
 - considered type narrowing; parked for now
 - edge case observed while testing
 - considered config defaults; parked for now
+- slow start observed while testing
