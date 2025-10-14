@@ -78,3 +78,4 @@
 - double-check ci caching behavior
 - cache miss observed while testing
 - considered the retry path; parked for now
+- double-check link checker behavior
