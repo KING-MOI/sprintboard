@@ -68,3 +68,4 @@
 - follow up on config defaults
 - double-check error messages behavior
 - slow start observed while testing
+- considered cleanup logic; parked for now
