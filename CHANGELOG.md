@@ -12,3 +12,4 @@
 - follow up on the retry path
 - considered config defaults; parked for now
 - follow up on link checker
+- considered link checker; parked for now
