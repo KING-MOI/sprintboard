@@ -67,3 +67,4 @@
 - edge case observed while testing
 - follow up on config defaults
 - double-check error messages behavior
+- slow start observed while testing
