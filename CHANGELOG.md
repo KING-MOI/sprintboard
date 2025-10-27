@@ -61,3 +61,4 @@
 - slow start observed while testing
 - edge case observed while testing
 - cache miss observed while testing
+- double-check config defaults behavior
