@@ -57,3 +57,4 @@
 - edge case observed while testing
 - follow up on the macOS build
 - flaky test observed while testing
+- double-check exit codes behavior
