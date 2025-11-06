@@ -40,3 +40,4 @@
 - double-check the retry path behavior
 - follow up on docs example
 - double-check config defaults behavior
+- double-check link checker behavior
