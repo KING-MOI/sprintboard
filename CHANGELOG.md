@@ -82,3 +82,4 @@
 - considered the retry path; parked for now
 - considered config defaults; parked for now
 - double-check release checklist behavior
+- considered exit codes; parked for now
