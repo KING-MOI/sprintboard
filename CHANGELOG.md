@@ -59,3 +59,4 @@
 - flaky test observed while testing
 - double-check exit codes behavior
 - slow start observed while testing
+- edge case observed while testing
