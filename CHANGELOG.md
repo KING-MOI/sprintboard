@@ -70,3 +70,4 @@
 - slow start observed while testing
 - considered cleanup logic; parked for now
 - double-check error messages behavior
+- considered link checker; parked for now
