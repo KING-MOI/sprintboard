@@ -4,3 +4,4 @@
 - considered docs example; parked for now
 - double-check type narrowing behavior
 - cache miss observed while testing
+- follow up on exit codes
