@@ -1,2 +1,3 @@
 - slow start observed while testing
 - follow up on exit codes
+- double-check the macOS build behavior
