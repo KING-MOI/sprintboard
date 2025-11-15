@@ -36,3 +36,4 @@
 - slow start observed while testing
 - considered link checker; parked for now
 - follow up on release checklist
+- follow up on exit codes
