@@ -19,3 +19,4 @@
 - considered error messages; parked for now
 - considered the retry path; parked for now
 - cache miss observed while testing
+- double-check release checklist behavior
