@@ -15,7 +15,7 @@ const report = buildReport(
 );
 const server = await serve(report);
 const browser = await chromium.launch({
-  executablePath: process.env.BOARDMAP_BROWSER || undefined,
+  executablePath: process.env.SPRINTBOARD_BROWSER || undefined,
 });
 const errors = [];
 try {

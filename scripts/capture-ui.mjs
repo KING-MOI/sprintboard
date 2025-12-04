@@ -30,7 +30,7 @@ const report = buildReport(repo, demo.base, demo.head, { board: demo.board });
 const server = await serve(report),
   url = `http://127.0.0.1:${server.address().port}`,
   browser = await chromium.launch({
-    executablePath: process.env.BOARDMAP_BROWSER || undefined,
+    executablePath: process.env.SPRINTBOARD_BROWSER || undefined,
   });
 await mkdir(out, { recursive: true });
 const errors = [];

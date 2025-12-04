@@ -32,7 +32,7 @@ const report = buildReport(
 );
 const server = await serve(report),
   browser = await chromium.launch({
-    executablePath: process.env.BOARDMAP_BROWSER || undefined,
+    executablePath: process.env.SPRINTBOARD_BROWSER || undefined,
   });
 // Layout checks measure tiles at rest, so these contexts ask for reduced motion.
 // The motion check near the end runs with animation enabled.

@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { git } from "../src/git.js";
 // Small git history for browser regressions, independent of network or upstream history.
 export function reviewFixture({ removedOnly = false } = {}) {
-  const repo = mkdtempSync(join(tmpdir(), "boardmap-browser-"));
+  const repo = mkdtempSync(join(tmpdir(), "sprintboard-browser-"));
   git(repo, ["init", "-q"]);
   git(repo, ["config", "user.name", "Test"]);
   git(repo, ["config", "user.email", "test@example.com"]);

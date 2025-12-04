@@ -18,7 +18,7 @@ const report = buildReport(
 );
 const server = await serve(report),
   browser = await chromium.launch({
-    executablePath: process.env.BOARDMAP_BROWSER || undefined,
+    executablePath: process.env.SPRINTBOARD_BROWSER || undefined,
   });
 const page = await browser.newPage({
   viewport: { width: 1100, height: 800 },
@@ -108,7 +108,7 @@ try {
           "8",
           "-loop",
           "0",
-          "docs/media/instrument/boardmap-demo.gif",
+          "docs/media/instrument/sprintboard-demo.gif",
         ],
         { encoding: "utf8" },
       );

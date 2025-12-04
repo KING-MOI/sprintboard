@@ -89,7 +89,7 @@ test("transitive traversal reaches beyond a two-pin bridge", () => {
   );
 });
 test("git revision reads do not change dirty working files; removed boards survive", () => {
-  const dir = mkdtempSync(join(tmpdir(), "boardmap-test-"));
+  const dir = mkdtempSync(join(tmpdir(), "sprintboard-test-"));
   try {
     git(dir, ["init", "-q"]);
     git(dir, ["config", "user.name", "Test"]);
@@ -234,7 +234,7 @@ test("affected union scans shared nets and excludes every changed part", () => {
   assert.equal(compare(parts, after).stats.affected, 3999);
 });
 test("diff.relative cannot redirect changed-board selection from a subdirectory", () => {
-  const dir = mkdtempSync(join(tmpdir(), "boardmap-relative-"));
+  const dir = mkdtempSync(join(tmpdir(), "sprintboard-relative-"));
   try {
     git(dir, ["init", "-q"]);
     git(dir, ["config", "user.name", "Test"]);

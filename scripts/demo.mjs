@@ -23,11 +23,11 @@ const [name, ...extra] = process.argv.slice(2),
   demo = demos[name];
 if (!demo) {
   console.error(
-    "Usage: node scripts/demo.mjs <hackrf|corne> [boardmap options]",
+    "Usage: node scripts/demo.mjs <hackrf|corne> [sprintboard options]",
   );
   process.exitCode = 1;
 } else {
-  const dir = join(homedir(), ".cache", "boardmap", "demos", name);
+  const dir = join(homedir(), ".cache", "sprintboard", "demos", name);
   mkdirSync(dir, { recursive: true });
   try {
     git(dir, ["init", "-q"]);
@@ -36,7 +36,7 @@ if (!demo) {
     const result = spawnSync(
       process.execPath,
       [
-        fileURLToPath(new URL("../bin/boardmap.js", import.meta.url)),
+        fileURLToPath(new URL("../bin/sprintboard.js", import.meta.url)),
         demo.base,
         demo.head,
         "--repo",

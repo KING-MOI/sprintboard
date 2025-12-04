@@ -1635,7 +1635,7 @@ function openDiff(p, origin) {
       "classification-note",
     );
     const link = el("a", "Rule details on GitHub");
-    link.href = "https://github.com/krishhgg/boardmap/blob/main/docs/assembly-priority.md";
+    link.href = "https://github.com/KING-MOI/sprintboard/blob/main/docs/assembly-priority.md";
     link.target = "_blank";
     link.rel = "noreferrer";
     note.append(link);
@@ -2276,7 +2276,7 @@ async function init() {
     if (!response.ok)
       throw new Error(`Report request returned ${response.status}`);
     report = await response.json();
-    await document.fonts.load('12px "Boardmap Mono"');
+    await document.fonts.load('12px "Sprintboard Mono"');
     parts = new Map(report.parts.map((p) => [p.id, p]));
     $("revision").textContent =
       `${report.base.slice(0, 8)} → ${report.head.slice(0, 8)}`;
@@ -2486,7 +2486,7 @@ async function init() {
     resetImpact();
   } catch (error) {
     $("project").textContent =
-      `Could not load this review. ${error.message}. Restart boardmap and reload this page.`;
+      `Could not load this review. ${error.message}. Restart sprintboard and reload this page.`;
   }
 }
 init();
