@@ -1,6 +1,6 @@
 # Assembly priority
 
-Boardmap keeps raw fields, attributes, pad changes and pin changes in the report. This page describes their presentation priority.
+Sprintboard keeps raw fields, attributes, pad changes and pin changes in the report. This page describes their presentation priority.
 
 DNP, BOM exclusion and placement exclusion are separate KiCad attributes. BOM exclusion does not mean unpopulated. See the [file-format specification](https://dev-docs.kicad.org/en/file-formats/sexpr-intro/#_footprint_attributes) and [footprint attribute definitions](https://docs.kicad.org/doxygen/footprint_8h_source.html).
 

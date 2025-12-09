@@ -1,29 +1,29 @@
-# boardmap
+# sprintboard
 
 See what a PCB change touches.
 
 A local, whole-design map for KiCad git reviews. Hover a part to trace its shared nets. Click it to inspect value, footprint, manufacturing fields, and pin-net changes, with before/after pad regions.
 
-![Corne PR review: trace ZD1, drill into its sheet, open the part diff, return](https://raw.githubusercontent.com/krishhgg/boardmap/c967371b5baeaa0e30f5d3c8bbb7f3876b3cba03/ui/final-ui-corne.gif)
+![Corne PR review: trace ZD1, drill into its sheet, open the part diff, return](https://raw.githubusercontent.com/KING-MOI/sprintboard/c967371b5baeaa0e30f5d3c8bbb7f3876b3cba03/ui/final-ui-corne.gif)
 
 ## Run it
 
 Requires Node.js 22+ and Git. No KiCad installation, account, or runtime packages. Install from the main branch:
 
 ```sh
-npm install -g github:krishhgg/boardmap#main && boardmap HEAD~1 HEAD
+npm install -g github:KING-MOI/sprintboard#main && sprintboard HEAD~1 HEAD
 ```
 
 Run that in a KiCad git repository, then open the printed `http://127.0.0.1:<port>` URL. The server binds only to loopback, reads revisions through git objects, and leaves your checkout alone. It makes no network requests. Installation and fetching the demos need internet; reviewing an existing local repo works offline.
 
 ```sh
-boardmap <base> <head>
-boardmap main HEAD --board hardware/controller.kicad_pcb
-boardmap v1 v2 --repo ../my-board --port 8080
-boardmap main HEAD --json review.json
+sprintboard <base> <head>
+sprintboard main HEAD --board hardware/controller.kicad_pcb
+sprintboard v1 v2 --repo ../my-board --port 8080
+sprintboard main HEAD --json review.json
 ```
 
-Both arguments must resolve to commits in the local repository. For PR-style review, pass the merge base as `<base>`. Boardmap compares exactly the two revisions you supply. Uncommitted work is outside the comparison.
+Both arguments must resolve to commits in the local repository. For PR-style review, pass the merge base as `<base>`. Sprintboard compares exactly the two revisions you supply. Uncommitted work is outside the comparison.
 
 By default, it includes every component in boards whose files changed. If no board changed, it includes all boards. The footer under the change list names the selection and shows its board count. Use `--board` with an exact repo-relative path to focus on one design. Added and deleted boards remain reviewable. `--json` exports the report without starting a server.
 
@@ -36,42 +36,42 @@ By default, it includes every component in boards whose files changed. If no boa
 - Click a sheet to zoom, use breadcrumbs to return, or switch to Board layout, which draws an approximate outline of each footprint from its pad positions and sizes inside a bounding frame and names changed parts. A name sits nearest its own marker, or moves out of a crowded cluster on a thin line to its marker. A drilled sheet grows only as needed to fit its references. Desktop sheets scroll inside the map; phone sheets use document scrolling. Each populated board has its own chooser when a repository contains multiple designs.
 - Click a part for its semantic diff and local pad regions. Press Escape or Back to map to return. With no part traced, Escape steps out of a drilled sheet. The returned component stays marked and named in the reach readout for mouse, keyboard and touch. Search by reference, value, footprint, or net. The sidebar follows the current board or sheet. Electrical edits come first, sorted by rewired-pin count and then natural reference order, followed by Removed, Added and Metadata groups. Zero-pad artwork stays in Metadata with its original added or removed status. Pin rows lead the inspector; changed property keys have individual rows, and changed pad geometry is available in a disclosure. The Changed only filter does not hide unchanged context in the map.
 
-The header counts head parts and nets, electrical changes and all changed components including removals. Beside the electrical total it shows the three terms of that sum: electrical edits, added parts and removed parts. Sheet headers and the legend use the same three classes and colors. Electrical changes include parts with pin, pad, value or footprint edits, DNP population transitions, replacements of both-present MPN / Part Number / Manufacturer Part Number identifiers, and added or removed parts with pads, except explicitly flagged unconnected fiducials. A bounded legacy DNP-field migration on verified board features stays in Metadata; BOM exclusion never defines population state. See [assembly priority](https://github.com/krishhgg/boardmap/blob/edba803fab67f7832c6dbb8039c47678788ae0a6/docs/assembly-priority.md). Filling an empty supplier or descriptive field alone stays in Metadata. The in-view total includes removed components, and its tooltip gives their count. Affected means unchanged direct neighbors of changed parts, excluding ground, across either revision. It is independent of the current hover and reach controls. Stable sheet UUIDs identify label renames. Boardmap reports these separately and normalizes old hierarchical net prefixes only when the mapping is unambiguous and does not merge distinct historical nets. Standalone net-label changes are reported separately when a unique, complete set of component pins matches across revisions. Added and removed loads participate in that proof; ambiguous matches and changed connections stay in the pin diff. Footprint rotations compare pad angles relative to the footprint, so rotation alone does not create a pad dump.
+The header counts head parts and nets, electrical changes and all changed components including removals. Beside the electrical total it shows the three terms of that sum: electrical edits, added parts and removed parts. Sheet headers and the legend use the same three classes and colors. Electrical changes include parts with pin, pad, value or footprint edits, DNP population transitions, replacements of both-present MPN / Part Number / Manufacturer Part Number identifiers, and added or removed parts with pads, except explicitly flagged unconnected fiducials. A bounded legacy DNP-field migration on verified board features stays in Metadata; BOM exclusion never defines population state. See [assembly priority](https://github.com/KING-MOI/sprintboard/blob/edba803fab67f7832c6dbb8039c47678788ae0a6/docs/assembly-priority.md). Filling an empty supplier or descriptive field alone stays in Metadata. The in-view total includes removed components, and its tooltip gives their count. Affected means unchanged direct neighbors of changed parts, excluding ground, across either revision. It is independent of the current hover and reach controls. Stable sheet UUIDs identify label renames. Sprintboard reports these separately and normalizes old hierarchical net prefixes only when the mapping is unambiguous and does not merge distinct historical nets. Standalone net-label changes are reported separately when a unique, complete set of component pins matches across revisions. Added and removed loads participate in that proof; ambiguous matches and changed connections stay in the pin diff. Footprint rotations compare pad angles relative to the footprint, so rotation alone does not create a pad dump.
 
-![Shared-net reach on the real Corne PR: six parts joined through +5V in green, one removed fuse dashed](https://raw.githubusercontent.com/krishhgg/boardmap/156f3c681341db3fb0346fc2e72f152d9122de5b/docs/media/ui/map/corne/map-reach.png)
+![Shared-net reach on the real Corne PR: six parts joined through +5V in green, one removed fuse dashed](https://raw.githubusercontent.com/KING-MOI/sprintboard/156f3c681341db3fb0346fc2e72f152d9122de5b/docs/media/ui/map/corne/map-reach.png)
 
-![HackRF U23, a hub with 205 neighbors: only its changed connections are drawn](https://raw.githubusercontent.com/krishhgg/boardmap/156f3c681341db3fb0346fc2e72f152d9122de5b/docs/media/ui/map/hackrf/hub-reach.png)
+![HackRF U23, a hub with 205 neighbors: only its changed connections are drawn](https://raw.githubusercontent.com/KING-MOI/sprintboard/156f3c681341db3fb0346fc2e72f152d9122de5b/docs/media/ui/map/hackrf/hub-reach.png)
 
 ## Try the real PRs
 
 Clone the repository to use the demo scripts:
 
 ```sh
-git clone https://github.com/krishhgg/boardmap.git
-cd boardmap
+git clone https://github.com/KING-MOI/sprintboard.git
+cd sprintboard
 node scripts/demo.mjs corne
 node scripts/demo.mjs hackrf
 ```
 
-Each command fetches two pinned commits into a per-user cache, without a checkout, then starts the local UI. Stop one review with Ctrl+C before running the next. The cache is under your home directory in `.cache/boardmap/demos` and can be deleted after use. Only the first fetch requires internet if you keep the git objects and run the CLI directly.
+Each command fetches two pinned commits into a per-user cache, without a checkout, then starts the local UI. Stop one review with Ctrl+C before running the next. The cache is under your home directory in `.cache/sprintboard/demos` and can be deleted after use. Only the first fetch requires internet if you keep the git objects and run the CLI directly.
 
 | Source PR                                                                             | Comparison                          | Head parts | Electrical | Changed | Unchanged affected |
 | ------------------------------------------------------------------------------------- | ----------------------------------- | ---------: | ---------: | ------: | -----------------: |
 | [HackRF #1411, HackRF One r10](https://github.com/greatscottgadgets/hackrf/pull/1411) | `f6598e7b..3bdc5547`, changed board |        437 |        105 |     389 |                 58 |
 | [Corne #237, v4.1.0](https://github.com/foostan/crkbd/pull/237)                       | `a935f345..eaf6e072`, cherry board  |        180 |         12 |      18 |                102 |
 
-The Corne PR changes both cherry and chocolate boards. Without `--board`, its report includes 360 head parts and 30 changed parts. The demo script selects cherry for a smaller review. See [current net-label proof](https://github.com/krishhgg/boardmap/tree/edba803fab67f7832c6dbb8039c47678788ae0a6/docs/media/net-labels), [visible return and readable-sheet captures](https://github.com/krishhgg/boardmap/tree/edba803fab67f7832c6dbb8039c47678788ae0a6/docs/media/continuity) the [instrument demo](https://github.com/krishhgg/boardmap/tree/edba803fab67f7832c6dbb8039c47678788ae0a6/docs/media/instrument) and the [current UI gallery](https://github.com/krishhgg/boardmap/tree/156f3c681341db3fb0346fc2e72f152d9122de5b/docs/media/ui). The older galleries record earlier revisions of the interface. Captures are actual Chromium runs, not mockups.
+The Corne PR changes both cherry and chocolate boards. Without `--board`, its report includes 360 head parts and 30 changed parts. The demo script selects cherry for a smaller review. See [current net-label proof](https://github.com/KING-MOI/sprintboard/tree/edba803fab67f7832c6dbb8039c47678788ae0a6/docs/media/net-labels), [visible return and readable-sheet captures](https://github.com/KING-MOI/sprintboard/tree/edba803fab67f7832c6dbb8039c47678788ae0a6/docs/media/continuity) the [instrument demo](https://github.com/KING-MOI/sprintboard/tree/edba803fab67f7832c6dbb8039c47678788ae0a6/docs/media/instrument) and the [current UI gallery](https://github.com/KING-MOI/sprintboard/tree/156f3c681341db3fb0346fc2e72f152d9122de5b/docs/media/ui). The older galleries record earlier revisions of the interface. Captures are actual Chromium runs, not mockups.
 
 ## Where it fits
 
 | Tool                                                          | Review focus                                                                                            |
 | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| boardmap                                                      | Local whole-design map and shared-net impact, including removed connections and opt-in transitive reach |
+| sprintboard                                                   | Local whole-design map and shared-net impact, including removed connections and opt-in transitive reach |
 | [KiRI](https://github.com/leoheck/kiri)                       | Visual comparison of KiCad schematic and PCB revisions                                                  |
 | [KiCAD-Prism](https://github.com/krishna-swaroop/KiCAD-Prism) | Self-hosted collaboration, project viewing, and component governance                                    |
 | [KiCad Viewer](https://www.kicadviewer.com/pull-requests)     | Visual and semantic PR diffs in its viewer                                                              |
 
-Use boardmap to answer "what else shares these nets?" before inspecting layout detail in KiCad or another visual diff tool.
+Use sprintboard to answer "what else shares these nets?" before inspecting layout detail in KiCad or another visual diff tool.
 
 ## Scope and limits
 
@@ -94,13 +94,13 @@ npm run test:e2e -- --fixture
 npm run test:e2e -- --fixture --removed
 ```
 
-Unit tests run without installing any dependencies. Playwright is a development dependency only. For an existing Chromium binary, set `BOARDMAP_BROWSER` to its executable path instead of downloading a browser.
+Unit tests run without installing any dependencies. Playwright is a development dependency only. For an existing Chromium binary, set `SPRINTBOARD_BROWSER` to its executable path instead of downloading a browser.
 
 To reproduce real-data captures after fetching the demos:
 
 ```sh
 node scripts/demo.mjs hackrf --json /tmp/hackrf-review.json
-npm run test:e2e -- --repo "$HOME/.cache/boardmap/demos/hackrf" \
+npm run test:e2e -- --repo "$HOME/.cache/sprintboard/demos/hackrf" \
   --base f6598e7b14b7ec539126479e9c6d095c668a534e \
   --head 3bdc5547004c8244de5f37104410c363854e5634 --out docs/media/instrument/hackrf
 ```
@@ -109,4 +109,4 @@ The demo command prints its cache path. The synthetic `--fixture` browser run cr
 
 The bundled JetBrains Mono font uses the SIL Open Font License; its notice is in [assets/fonts/OFL.txt](assets/fonts/OFL.txt). Fonts and the shared header/favicon mark are served by fixed local asset routes. Screenshots and the GIF are excluded from the installed package.
 
-MIT license for boardmap. Real-world test boards and their notices have separate licenses under [test/fixtures](test/fixtures/README.md). Demo screenshots contain design data from those upstream projects.
+MIT license for sprintboard. Real-world test boards and their notices have separate licenses under [test/fixtures](test/fixtures/README.md). Demo screenshots contain design data from those upstream projects.

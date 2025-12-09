@@ -18,7 +18,7 @@ These are actual Chromium captures of the pinned HackRF and Corne comparisons. N
 
 ## Reproduce
 
-Use Node 22+, `npm ci`, and Playwright Chromium. An existing browser can be selected with `BOARDMAP_BROWSER`. Set `HACKRF_CACHE` and `CORNE_CACHE` to local git caches containing the pinned objects, or fetch them with `scripts/demo.mjs` and stop its server before capturing.
+Use Node 22+, `npm ci`, and Playwright Chromium. An existing browser can be selected with `SPRINTBOARD_BROWSER`. Set `HACKRF_CACHE` and `CORNE_CACHE` to local git caches containing the pinned objects, or fetch them with `scripts/demo.mjs` and stop its server before capturing.
 
 ```sh
 npm test
@@ -37,8 +37,8 @@ npm run test:e2e -- --repo "$CORNE_CACHE" \
 npm run test:e2e -- --repo "$CORNE_CACHE" \
   --base eaf6e072fe273c2cfd64690de135ddb7ffe870f9 \
   --head eaf6e072fe273c2cfd64690de135ddb7ffe870f9 \
-  --out /tmp/boardmap-return-current --continuity
-cp /tmp/boardmap-return-current/board-neighbor-return.png docs/media/continuity/corne/
+  --out /tmp/sprintboard-return-current --continuity
+cp /tmp/sprintboard-return-current/board-neighbor-return.png docs/media/continuity/corne/
 npm run test:e2e -- --repo "$HACKRF_CACHE" \
   --base f6598e7b14b7ec539126479e9c6d095c668a534e \
   --head 3bdc5547004c8244de5f37104410c363854e5634 \

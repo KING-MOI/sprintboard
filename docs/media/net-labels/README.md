@@ -11,7 +11,7 @@ These four PNGs come from the running UI on the real, pinned HackRF PR1411 compa
 
 ## Reproduce
 
-Use Node 22+, `npm ci` and Playwright Chromium. An existing Chromium can be selected with `BOARDMAP_BROWSER`. Set `HACKRF_CACHE` and `CORNE_CACHE` to git caches containing the objects below; the demo script can fetch them.
+Use Node 22+, `npm ci` and Playwright Chromium. An existing Chromium can be selected with `SPRINTBOARD_BROWSER`. Set `HACKRF_CACHE` and `CORNE_CACHE` to git caches containing the objects below; the demo script can fetch them.
 
 ```sh
 npm test

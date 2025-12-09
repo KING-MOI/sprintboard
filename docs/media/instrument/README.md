@@ -27,7 +27,7 @@ HackRF's first electrical rows are U17 with 51 rewired pins, U19 with 19 and U23
 
 ## Reproduce
 
-Set `BOARDMAP_BROWSER` to an installed Chromium executable when Playwright's browser is unavailable. Set `HACKRF_CACHE` and `CORNE_CACHE` to repositories containing the pinned objects. The existing demo script can populate these caches.
+Set `SPRINTBOARD_BROWSER` to an installed Chromium executable when Playwright's browser is unavailable. Set `HACKRF_CACHE` and `CORNE_CACHE` to repositories containing the pinned objects. The existing demo script can populate these caches.
 
 ```sh
 npm ci
@@ -52,7 +52,7 @@ The synthetic drill assertion opens the geometry disclosure, checks pad 2's 0.8 
 
 ## Demo and package
 
-`demo-frames/` contains four actual 1100×800 ZD1 review states. The recording cursor follows real pointer events; it is not part of the application. `boardmap-demo.gif` holds the states for 1.2, 1.2, 2.8 and 2.8 seconds. FFprobe reports 8.000 seconds, 80 frames and 1100×800 pixels. FFmpeg is needed only to rebuild the GIF.
+`demo-frames/` contains four actual 1100×800 ZD1 review states. The recording cursor follows real pointer events; it is not part of the application. `sprintboard-demo.gif` holds the states for 1.2, 1.2, 2.8 and 2.8 seconds. FFprobe reports 8.000 seconds, 80 frames and 1100×800 pixels. FFmpeg is needed only to rebuild the GIF.
 
 An offline install of the packed tarball passed checks for the HTML, app, helper, CSS, shared mark and mono font routes. Arbitrary asset paths returned 404. The package has zero runtime dependencies and excludes this media directory. The bundled font's OFL notice is installed with it.
 

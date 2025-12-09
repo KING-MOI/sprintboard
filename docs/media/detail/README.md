@@ -26,7 +26,7 @@ The refreshed eight-second hero and four frames are in `../instrument/`. Earlier
 
 ## Reproduce
 
-Use Node 22+, run `npm ci`, and install Chromium with `npx playwright install chromium`, or set `BOARDMAP_BROWSER` to an existing executable. Fetch the pinned revisions with `scripts/demo.mjs` and stop its server before capturing. Set `HACKRF_CACHE` and `CORNE_CACHE` to the resulting local git caches.
+Use Node 22+, run `npm ci`, and install Chromium with `npx playwright install chromium`, or set `SPRINTBOARD_BROWSER` to an existing executable. Fetch the pinned revisions with `scripts/demo.mjs` and stop its server before capturing. Set `HACKRF_CACHE` and `CORNE_CACHE` to the resulting local git caches.
 
 ```sh
 npm test
@@ -46,8 +46,8 @@ node scripts/capture-demo.mjs "$CORNE_CACHE" --gif
 npm run test:e2e -- --repo "$CORNE_CACHE" \
   --base eaf6e072fe273c2cfd64690de135ddb7ffe870f9 \
   --head eaf6e072fe273c2cfd64690de135ddb7ffe870f9 \
-  --out /tmp/boardmap-return --detail
-cp /tmp/boardmap-return/board-neighbor-return.png docs/media/detail/corne/
+  --out /tmp/sprintboard-return --detail
+cp /tmp/sprintboard-return/board-neighbor-return.png docs/media/detail/corne/
 ```
 
 `--detail` limits captures to the states listed above. Each run closes its browser and ephemeral loopback server.

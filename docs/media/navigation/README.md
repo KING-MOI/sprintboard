@@ -17,7 +17,7 @@ Existing instrument captures and the hero are unchanged.
 
 ## Reproduce
 
-Use Node 22 or newer. Set `BOARDMAP_BROWSER` to an installed Chromium executable if Playwright's default browser is unavailable. Set `HACKRF_CACHE` and `CORNE_CACHE` to repositories containing the pinned commits. Prior capture commands and source context are in `../instrument/README.md`.
+Use Node 22 or newer. Set `SPRINTBOARD_BROWSER` to an installed Chromium executable if Playwright's default browser is unavailable. Set `HACKRF_CACHE` and `CORNE_CACHE` to repositories containing the pinned commits. Prior capture commands and source context are in `../instrument/README.md`.
 
 ```sh
 npm ci
