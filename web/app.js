@@ -1635,7 +1635,7 @@ function openDiff(p, origin) {
       "classification-note",
     );
     const link = el("a", "Rule details on GitHub");
-    link.href = "https://github.com/KING-MOI/sprintboard/blob/main/docs/assembly-priority.md";
+    link.href = "https://github.com/pekkaiscool/sprintboard/blob/main/docs/assembly-priority.md";
     link.target = "_blank";
     link.rel = "noreferrer";
     note.append(link);
